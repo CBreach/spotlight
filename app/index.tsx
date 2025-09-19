@@ -1,24 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Redirect } from "expo-router";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <Redirect href="/(tabs)" /> // k, so this is where we redirect to the tab layout
+    // important note: just redirect to /(tabs) not /(tabs)/index
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-})
