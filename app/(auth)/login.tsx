@@ -7,9 +7,9 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 export default function Login() {
     const {startSSOFlow} = useSSO()
     const router = useRouter()
-    const handleGoogleSignIn = async() =>{
+    const handleSignIn = async(provider : 'google'|'apple') =>{
         try{
-            const {createdSessionId, setActive} = await startSSOFlow({strategy: "oauth_google"})
+            const {createdSessionId, setActive} = await startSSOFlow({strategy: `oauth_${provider}`})
             if(createdSessionId && setActive){
                 setActive({session: createdSessionId})
                 router.replace("../(tabs)")
@@ -41,13 +41,24 @@ export default function Login() {
             <View style={styles.loginSection}>
                 <TouchableOpacity 
                     style={styles.googleButton}
-                    onPress={() => handleGoogleSignIn()}
+                    onPress={() => handleSignIn("google")}
                     activeOpacity={0.8}
                 >
                     <View style={styles.googleIconContainer}>
                         <Ionicons name="logo-google" size={20} color={Colors.surface}/>
                     </View>
                     <Text style={styles.googleButtonText}>Continue with Google</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.googleButton}
+                    onPress={() => handleSignIn("apple")}
+                    activeOpacity={0.8}
+                >
+                    <View style={styles.googleIconContainer}>
+                        <Ionicons name="logo-apple" size={20} color={Colors.surface}/>
+                    </View>
+                    <Text style={styles.googleButtonText}>Continue with Apple</Text>
+
                 </TouchableOpacity>
                 <Text style={styles.termsText}>By continuing you agree with our terms of service</Text>
             </View>
