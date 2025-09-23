@@ -10,9 +10,11 @@ export default function Login() {
     const handleSignIn = async(provider : 'google'|'apple') =>{
         try{
             const {createdSessionId, setActive} = await startSSOFlow({strategy: `oauth_${provider}`})
+            console.log("SSO Flow Result: ", {createdSessionId, setActive})
             if(createdSessionId && setActive){
+                console.log("Successfully signed in with ", provider)
                 setActive({session: createdSessionId})
-                router.replace("../(tabs)")
+                router.replace("/(tabs)");
             }
         } catch(err){
             console.log("Error during Google Sign-In: ", err)
