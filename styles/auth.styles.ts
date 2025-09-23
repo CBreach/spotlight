@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
     paddingBottom: 40,
     alignItems: "center",
   },
-  googleButton: {
+  authButton: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 24,
     borderRadius: 14,
-    marginBottom: 20,
+    marginBottom: 10,
     width: "100%",
     maxWidth: 300,
     shadowColor: "#000",
@@ -73,12 +73,35 @@ export const styles = StyleSheet.create({
     shadowRadius: 12,
     elevation: 5,
   },
+  rowBtn:{
+    flex: 1,                 // each takes half of the row
+    height: 48,
+    borderRadius: 12,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  authRow:{
+    flexDirection: 'row',
+    gap: 12,
+    marginHorizontal: 24,
+    marginTop: 16,
+  },
   googleIconContainer: {
     width: 24,
     height: 24,
     justifyContent: "center",
     alignItems: "center",
     marginRight: 12,
+  },
+  appleIconContainer: {
+    width: 24,
+    height: 24,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 14,
+    transform: [{ translateY: -3 }],
   },
   googleButtonText: {
     fontSize: 16,

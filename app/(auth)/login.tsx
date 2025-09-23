@@ -40,7 +40,7 @@ export default function Login() {
             {/* Login Section*/}
             <View style={styles.loginSection}>
                 <TouchableOpacity 
-                    style={styles.googleButton}
+                    style={styles.authButton}
                     onPress={() => handleSignIn("google")}
                     activeOpacity={0.8}
                 >
@@ -50,12 +50,12 @@ export default function Login() {
                     <Text style={styles.googleButtonText}>Continue with Google</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    style={styles.googleButton}
+                    style={styles.authButton}
                     onPress={() => handleSignIn("apple")}
                     activeOpacity={0.8}
                 >
-                    <View style={styles.googleIconContainer}>
-                        <Ionicons name="logo-apple" size={20} color={Colors.surface}/>
+                    <View style={styles.appleIconContainer}>
+                        <Ionicons name="logo-apple" size={25} color={Colors.surface}/>
                     </View>
                     <Text style={styles.googleButtonText}>Continue with Apple</Text>
 
